@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_driver/driver_list.dart';
+import 'package:my_driver/styled_body_text.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -8,7 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Driver"),
+        title: const StyledBodyText("My Driver"),
         backgroundColor: const Color.fromARGB(255, 255, 240, 0),
         centerTitle: true,
       ),
@@ -18,7 +19,7 @@ class Home extends StatelessWidget {
           Container(
             color: Colors.brown[200],
             padding: const EdgeInsets.all(20),
-            child: const Text('Find a driver...'),
+            child: const StyledBodyText('Find a driver...'),
           ),
           Container(
             color: Colors.brown[100],

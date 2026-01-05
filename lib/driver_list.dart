@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_driver/styled_button.dart';
 
 class DriverList extends StatefulWidget {
   const DriverList({super.key});
@@ -43,14 +44,10 @@ class _DriverListState extends State<DriverList> {
               ),
 
             const Expanded (child: SizedBox(width: 50)),
-            FilledButton(
-              style: FilledButton.styleFrom(
-                backgroundColor: Colors.amber[700],
-                foregroundColor: Colors.brown[800],
-              ),
+            StyledButton(
               onPressed: increaseJohnETA,
               child: const Text('+'),
-            )
+            ),
           ]
         ),
         Row(
@@ -68,14 +65,10 @@ class _DriverListState extends State<DriverList> {
               ),
 
             const Expanded (child: SizedBox(width: 50)),
-            FilledButton(
-              style: FilledButton.styleFrom(
-                backgroundColor: Colors.amber[700],
-                foregroundColor: Colors.brown[800],
-              ),
+            StyledButton(
               onPressed: increaseStacyETA,
               child: const Text('+'),
-            )
+            ),
           ]
         ),
       ]
