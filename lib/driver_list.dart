@@ -30,13 +30,18 @@ class _DriverListState extends State<DriverList> {
       children: [
         Row(
           children: [
-            Text('John Doe ETA: '),
-            Text('$JOHNS_ETA'),
-            Image.asset('assets/img/minimal_car_100x100.png',
-              width: 25,
-              color: Colors.brown[100],
-              colorBlendMode: BlendMode.multiply,
-            ),
+            Text('John Doe ETA: $JOHNS_ETA '),
+
+            if (JOHNS_ETA == 0)
+              const Text("DriverInactive"),
+
+            for (int i = 0; i < JOHNS_ETA; i++)
+              Image.asset('assets/img/minimal_car_100x100.png',
+                width: 25,
+                color: Colors.brown[100],
+                colorBlendMode: BlendMode.multiply,
+              ),
+
             const Expanded (child: SizedBox(width: 50)),
             FilledButton(
               style: FilledButton.styleFrom(
@@ -50,13 +55,18 @@ class _DriverListState extends State<DriverList> {
         ),
         Row(
           children: [
-            Text('Stacy Meyers ETA: '),
-            Text('$STACYS_ETA'),
-            Image.asset('assets/img/minimal_car_100x100.png',
-              width: 25,
-              color: Colors.brown[100],
-              colorBlendMode: BlendMode.multiply,
-            ),
+            Text('Stacy Meyers ETA: $STACYS_ETA '),
+
+            if (STACYS_ETA == 0)
+              const Text("Driver Inactive"),
+
+            for (int i = 0; i < STACYS_ETA; i++)
+              Image.asset('assets/img/minimal_car_100x100.png',
+                width: 25,
+                color: Colors.brown[100],
+                colorBlendMode: BlendMode.multiply,
+              ),
+
             const Expanded (child: SizedBox(width: 50)),
             FilledButton(
               style: FilledButton.styleFrom(
