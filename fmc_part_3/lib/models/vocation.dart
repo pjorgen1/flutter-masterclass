@@ -1,31 +1,31 @@
 enum Vocation {
-  raider(
+  ash(
     title: "Terminal Raider",
     description: "Adept in terminal commands",
     weapon: "Terminal",
     ability: "Shellshock",
-    image: "terminal_raider.jpg",
+    image: "ash.png",
   ),
-  junkie(
+  misty(
     title: "Code Junkie",
     description: "Uses code",
     weapon: "React 99",
     ability: "Mona Lisa Overdrive",
-    image: "code_junkie.jpg",
+    image: "misty.png",
   ),
-  ninja(
+  jessie(
     title: "UX Ninja",
     description: "Visual attacker",
     weapon: "Infused Stylus",
     ability: "Triple Swipe",
-    image: "ux_ninja.jpg",
+    image: "jessie.png",
   ),
-  wizard(
+  james(
     title: "Algo Wizard",
     description: "Algorithm Magic",
     weapon: "Crystal Staff",
     ability: "Big O Blast",
-    image: "algo_wizard.jpg",
+    image: "james.png",
   );
 
   final String title;

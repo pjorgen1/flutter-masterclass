@@ -5,7 +5,7 @@ class AppColors {
   static Color primaryAccent = const Color.fromRGBO(255, 235, 0, 1);
   static Color secondaryColor = const Color.fromARGB(255, 50, 50, 50);
   static Color secondaryAccent = const Color.fromARGB(255, 25, 25, 25);
-  static Color titleColor = const Color.fromARGB(255, 34, 34, 34);
+  static Color titleColor = const Color.fromARGB(255, 240, 240, 240);
   static Color textColor = const Color.fromARGB(255, 175, 175, 175);
   static Color successColor = const Color.fromARGB(255, 6, 255, 184);
   static Color highlightColor = const Color.fromARGB(255, 255, 0, 0); 

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fmc_part_3/theme.dart';
+import 'package:fmc_part_3/home/home.dart';
 
 void main() {
   runApp(MaterialApp(
     theme: primaryTheme,
+    home: const Home(),
   ));
 }
 
