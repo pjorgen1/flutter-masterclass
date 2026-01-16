@@ -1,6 +1,7 @@
-import 'package:fmc_part_3/models/stats.dart';
-import 'package:fmc_part_3/models/vocation.dart';
-import 'package:fmc_part_3/models/skill.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'stats.dart';
+import 'vocation.dart';
+import 'skill.dart';
 
 class Character with Stats{
 
@@ -32,12 +33,51 @@ class Character with Stats{
     skills.clear();
     skills.add(skill);
   }
-}
 
-// dummy character data
-List<Character> characters = [
-  Character(id: "1", name: "Ash",    vocation: Vocation.ash,    slogan: "Gotta catch em all!"),
-  Character(id: "2", name: "Misty",  vocation: Vocation.misty,  slogan: "Go togapie!"),
-  Character(id: "3", name: "Jessie", vocation: Vocation.jessie, slogan: "Prepare for trouble..."),
-  Character(id: "4", name: "James",  vocation: Vocation.james,  slogan: "And make it double..."),
-];
+  // send character to firestore (map)
+  Map<String, dynamic> toFirestore() {
+    return{
+      "name": name,
+      "slogan": slogan,
+      "isFav": _isFav,
+      "vocation": vocation.toString(),
+      "skills": skills.map((s) => s.id).toList(),
+      "stats": statsAsMap,
+      "points": points,
+    };
+  }
+
+  // character from firestore
+  factory Character.fromFirestore(
+    DocumentSnapshot<Map<String, dynamic >> snapshot,
+    SnapshotOptions? options
+  ) {
+    
+    // get data from snapshot
+    final data = snapshot.data()!;
+
+    // make character instance
+    Character character = Character(
+      name: data["name"],
+      slogan: data["slogan"],
+      id: snapshot.id,
+      vocation: Vocation.values.firstWhere((v) => v.toString() == data["vocation"]),
+    );
+
+    // update skills
+    for (String id in data["skills"]) {
+      Skill skill = allSkills.firstWhere((element) => element.id == id);
+      character.updateSkill(skill);
+    }
+
+    // set isFav
+    if (data["isFav"] == true) {
+      character.toggleIsFav();
+    }
+
+    // assign stats & points
+    character.setStats(points: data["points"], stats: data["stats"]);
+
+    return character;
+  }
+}

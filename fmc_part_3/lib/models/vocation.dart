@@ -1,30 +1,30 @@
 enum Vocation {
-  ash(
-    title: "Terminal Raider",
-    description: "Adept in terminal commands",
-    weapon: "Terminal",
-    ability: "Shellshock",
-    image: "ash.png",
-  ),
-  misty(
-    title: "Code Junkie",
-    description: "Uses code",
-    weapon: "React 99",
-    ability: "Mona Lisa Overdrive",
+  water(
+    title: "Water Trainer",
+    description: "Uses Water and Ice type Pokemon",
+    weapon: "Water Gun",
+    ability: "Water Blast",
     image: "misty.png",
   ),
-  jessie(
-    title: "UX Ninja",
-    description: "Visual attacker",
-    weapon: "Infused Stylus",
-    ability: "Triple Swipe",
+  rock(
+    title: "Rock Trainer",
+    description: "Uses Rock type Pokemon",
+    weapon: "Brick",
+    ability: "Brick Throw",
+    image: "brock.png",
+  ),
+  grass(
+    title: "Grass Trainer",
+    description: "Uses Grass and Plant type Pokemon",
+    weapon: "Gun",
+    ability: "Blast Em!",
     image: "jessie.png",
   ),
-  james(
-    title: "Algo Wizard",
-    description: "Algorithm Magic",
-    weapon: "Crystal Staff",
-    ability: "Big O Blast",
+  electric(
+    title: "Electric Trainer",
+    description: "Uses Electric type Pokemon",
+    weapon: "Fists",
+    ability: "Punch",
     image: "james.png",
   );
 

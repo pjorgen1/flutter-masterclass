@@ -4,7 +4,8 @@ class AppColors {
   static Color primaryColor = const Color.fromARGB(255, 255, 135, 7);
   static Color primaryAccent = const Color.fromRGBO(255, 235, 0, 1);
   static Color secondaryColor = const Color.fromARGB(255, 50, 50, 50);
-  static Color secondaryAccent = const Color.fromARGB(255, 25, 25, 25);
+  static Color secondaryAccent = const Color.fromARGB(255, 20, 20, 20);
+  static Color tertiaryColor = const Color.fromARGB(255, 35, 35, 35);
   static Color titleColor = const Color.fromARGB(255, 240, 240, 240);
   static Color textColor = const Color.fromARGB(255, 175, 175, 175);
   static Color successColor = const Color.fromARGB(255, 6, 255, 184);
@@ -49,4 +50,18 @@ ThemeData primaryTheme = ThemeData(
     ),
   ),
 
+  // input decoration theme
+  inputDecorationTheme: InputDecorationTheme(
+    filled: true,
+    fillColor: AppColors.secondaryColor,
+    border: InputBorder.none,
+    labelStyle: TextStyle(color: AppColors.textColor),
+    prefixIconColor: AppColors.textColor,
+  ),
+
+  // dialog theme
+  dialogTheme: DialogThemeData(
+    backgroundColor: AppColors.secondaryColor,
+    surfaceTintColor: Colors.transparent,
+  ),
 );

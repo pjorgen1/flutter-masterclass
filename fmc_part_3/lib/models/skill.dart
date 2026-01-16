@@ -1,4 +1,4 @@
-import 'package:fmc_part_3/models/vocation.dart';
+import 'vocation.dart';
 
 class Skill {
   final String id;
@@ -15,26 +15,27 @@ class Skill {
 }
 
 final List<Skill> allSkills = [
-  Skill(id: '1', name: 'Brute Force Bolt', image: 'bf_bolt.jpg', vocation: Vocation.ash),
-  Skill(id: '2', name: 'Recursive Wave', image: 'r_wave.jpg', vocation: Vocation.ash),
-  Skill(id: '3', name: 'Hash Beam', image: 'h_beam.jpg', vocation: Vocation.ash),
-  Skill(id: '4', name: 'Backtrack', image: 'backtrack.jpg', vocation: Vocation.ash),
+  // Water Trainer skills
+  Skill(id: '1', name: 'Brute Force Bolt', image: 'bf_bolt.jpg', vocation: Vocation.water),
+  Skill(id: '2', name: 'Recursive Wave', image: 'r_wave.jpg', vocation: Vocation.water),
+  Skill(id: '3', name: 'Hash Beam', image: 'h_beam.jpg', vocation: Vocation.water),
+  Skill(id: '4', name: 'Backtrack', image: 'backtrack.jpg', vocation: Vocation.water),
 
-  // terminal raider skills
-  Skill(id: '5', name: 'Lethal Touch', image: 'l_touch.jpg', vocation: Vocation.misty),
-  Skill(id: '6', name: 'Sudo Blast', image: 's_blast.jpg', vocation: Vocation.misty),
-  Skill(id: '7', name: 'Full Clear', image: 'f_clear.jpg', vocation: Vocation.misty),
-  Skill(id: '8', name: 'Support Shell', image: 's_shell.jpg', vocation: Vocation.misty),
+  // Rock Trainer skills
+  Skill(id: '5', name: 'Lethal Touch', image: 'l_touch.jpg', vocation: Vocation.rock),
+  Skill(id: '6', name: 'Sudo Blast', image: 's_blast.jpg', vocation: Vocation.rock),
+  Skill(id: '7', name: 'Full Clear', image: 'f_clear.jpg', vocation: Vocation.rock),
+  Skill(id: '8', name: 'Support Shell', image: 's_shell.jpg', vocation: Vocation.rock),
 
-  // code junkie skills
-  Skill(id: '9', name: 'Infinite Loop', image: 'i_loop.jpg', vocation: Vocation.jessie),
-  Skill(id: '10', name: 'Type Cast', image: 't_cast.jpg', vocation: Vocation.jessie),
-  Skill(id: '11', name: 'Encapsulate', image: 'encapsulate.jpg', vocation: Vocation.jessie),
-  Skill(id: '12', name: 'Copy & Paste', image: 'c_paste.jpg', vocation: Vocation.jessie),
+  // Grass Trainer skills
+  Skill(id: '9', name: 'Infinite Loop', image: 'i_loop.jpg', vocation: Vocation.grass),
+  Skill(id: '10', name: 'Type Cast', image: 't_cast.jpg', vocation: Vocation.grass),
+  Skill(id: '11', name: 'Encapsulate', image: 'encapsulate.jpg', vocation: Vocation.grass),
+  Skill(id: '12', name: 'Copy & Paste', image: 'c_paste.jpg', vocation: Vocation.grass),
 
-  // ux ninja skills
-  Skill(id: '13', name: 'Gamify', image: 'gamify.jpg', vocation: Vocation.james),
-  Skill(id: '14', name: 'Heat Map', image: 'h_map.jpg', vocation: Vocation.james),
-  Skill(id: '15', name: 'Wireframe', image: 'wireframe.jpg', vocation: Vocation.james),
-  Skill(id: '16', name: 'Dark Pattern', image: 'd_pattern.jpg', vocation: Vocation.james),
+  // Electric Trainer skills
+  Skill(id: '13', name: 'Gamify', image: 'gamify.jpg', vocation: Vocation.electric),
+  Skill(id: '14', name: 'Heat Map', image: 'h_map.jpg', vocation: Vocation.electric),
+  Skill(id: '15', name: 'Wireframe', image: 'wireframe.jpg', vocation: Vocation.electric),
+  Skill(id: '16', name: 'Dark Pattern', image: 'd_pattern.jpg', vocation: Vocation.electric),
 ];
