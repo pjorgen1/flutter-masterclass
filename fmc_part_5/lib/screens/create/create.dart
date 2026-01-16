@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fmc_part_5/models/vocation.dart';
 import 'package:fmc_part_5/screens/create/vocation_card.dart';
-import 'package:fmc_part_5/services/data_store.dart';
+import 'package:fmc_part_5/services/character_store.dart';
 import 'package:fmc_part_5/shared/styled_button.dart';
 import 'package:fmc_part_5/theme.dart';
 import 'package:fmc_part_5/shared/styled_text.dart';
@@ -34,7 +34,7 @@ class _CreateState extends State<CreateScreen> {
   }
 
   // handling vocation selection
-  Vocation selectedVocation = Vocation.ash;
+  Vocation selectedVocation = Vocation.water;
 
   void updateVocation(Vocation vocation) {
     setState(() {
@@ -165,24 +165,24 @@ class _CreateState extends State<CreateScreen> {
 
             // vocation cards
             VocationCard(
-              selected: selectedVocation == Vocation.ash,
+              selected: selectedVocation == Vocation.water,
               onTap: updateVocation,
-              vocation: Vocation.ash,
+              vocation: Vocation.water,
             ),
             VocationCard(
-              selected: selectedVocation == Vocation.misty,
+              selected: selectedVocation == Vocation.rock,
               onTap: updateVocation,
-              vocation: Vocation.misty
+              vocation: Vocation.rock
             ),
             VocationCard(
-              selected: selectedVocation == Vocation.jessie,
+              selected: selectedVocation == Vocation.grass,
               onTap: updateVocation,
-              vocation: Vocation.jessie
+              vocation: Vocation.grass
             ),
             VocationCard(
-              selected: selectedVocation == Vocation.james,
+              selected: selectedVocation == Vocation.electric,
               onTap: updateVocation,
-              vocation: Vocation.james
+              vocation: Vocation.electric
             ),
 
             // Good luck message

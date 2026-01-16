@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fmc_part_4/theme.dart';
 import 'package:fmc_part_4/screens/home/home.dart';
-import 'package:fmc_part_4/screens/create/create.dart';
 
 void main() {
   runApp(MaterialApp(

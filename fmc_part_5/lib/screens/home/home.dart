@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fmc_part_5/screens/create/create.dart';
 import 'package:fmc_part_5/screens/home/character_card.dart';
-import 'package:fmc_part_5/services/data_store.dart';
+import 'package:fmc_part_5/services/character_store.dart';
 import 'package:provider/provider.dart';
 import '../../shared/styled_text.dart';
 import '../../shared/styled_button.dart';
-import 'character_card.dart';
-import '../../models/character.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -18,10 +16,18 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   @override
+  void initState() {
+    Provider.of<CharacterStore>(context, listen: false)
+      .fetchCharactersOnce();
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Characters'),
+        title: const Text('Trainers'),
         centerTitle: true,
       ),
       body: Container(
@@ -34,7 +40,14 @@ class _HomeState extends State<Home> {
                   return ListView.builder(
                     itemCount: value.characters.length,
                     itemBuilder: (_, index) {
-                      return CharacterCard(value.characters[index]);
+                      return Dismissible(
+                        key: ValueKey(value.characters[index].id),
+                        onDismissed: (direction) {
+                          Provider.of<CharacterStore>(context, listen: false)
+                            .removeCharacter(value.characters[index]);
+                        },
+                        child: CharacterCard(value.characters[index])
+                      );
                     },
                   );
                 }
@@ -47,7 +60,7 @@ class _HomeState extends State<Home> {
                   builder: (ctx) => const CreateScreen(),
                 ));
               },
-              child: const StyledHeading('Create new character'),
+              child: const StyledHeading('Create new Trainer'),
             )
           ]
         )

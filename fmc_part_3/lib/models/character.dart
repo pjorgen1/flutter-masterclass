@@ -1,7 +1,6 @@
 import 'package:fmc_part_3/models/stats.dart';
 import 'package:fmc_part_3/models/vocation.dart';
 import 'package:fmc_part_3/models/skill.dart';
-import 'package:fmc_part_3/models/vocation.dart';
 
 class Character with Stats{
 

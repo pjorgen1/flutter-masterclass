@@ -13,6 +13,8 @@ class StatsTable extends StatefulWidget {
 }
 
 class _StatsTableState extends State<StatsTable> {
+  double turns = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,8 +28,12 @@ class _StatsTableState extends State<StatsTable> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                Icon(Icons.star,
-                  color: widget.character.points > 0 ? AppColors.primaryAccent : Colors.black, 
+                AnimatedRotation(
+                  turns: turns,
+                  duration: const Duration(milliseconds: 200),
+                  child: Icon(Icons.star,
+                    color: widget.character.points > 0 ? AppColors.primaryAccent : Colors.black, 
+                  ),
                 ),
                 const SizedBox(width: 20),
                 const StyledText('Stat points available: '),
@@ -64,21 +70,31 @@ class _StatsTableState extends State<StatsTable> {
 
                   // icon to increase stat
                   TableCell(
-                    child:IconButton(
-                      icon: Icon(Icons.arrow_upward, color: Colors.green),
-                      onPressed: () {
-                        widget.character.increaseStat(stat['title']!);
-                      }
+                    child: GestureDetector(
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_upward, color: Colors.green),
+                        onPressed: () {
+                          setState(() {
+                            widget.character.increaseStat(stat['title']!);
+                            turns += 0.5;
+                          });
+                        }
+                      ),
                     )
                   ),
 
                   // icon to decrease stat
                   TableCell(
-                    child:IconButton(
-                      icon: Icon(Icons.arrow_downward, color: Colors.yellow),
-                      onPressed: () {
-                        widget.character.decreaseStat(stat['title']!);
-                      }
+                    child: GestureDetector(
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_downward, color: Colors.yellow),
+                        onPressed: () {
+                          setState(() {
+                            widget.character.decreaseStat(stat['title']!);
+                            turns -= 0.5;
+                          });
+                        }
+                      ),
                     )
                   ),
                 ],
