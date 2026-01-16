@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fmc_part_3/models/character.dart';
-import 'package:fmc_part_3/models/vocation.dart';
 import 'package:fmc_part_3/services/firestore_service.dart';
 
 class CharacterStore extends ChangeNotifier {
